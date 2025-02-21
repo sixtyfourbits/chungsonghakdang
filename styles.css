@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'BMKkubulim';
+    src: url('fonts/BMKkubulimTTF.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'GmarketSansTTFBold';
+    src: url('fonts/GmarketSansTTFBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'GmarketSansTTFLight';
+    src: url('fonts/GmarketSansTTFLight.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'GmarketSansTTFMedium';
+    src: url('fonts/GmarketSansTTFMedium.ttf') format('truetype');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('sd.jpg');
+    background-color: black;
+    background-color: rgba(0,0,0,0.6);
+    background-blend-mode: darken;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+.main_buttons {
+    display: grid;
+    font-size: 1.8em;
+    letter-spacing: 0.2em;
+    font-family: 'GmarketSansTTFLight', Arial, sans-serif;
+}
+.main_button {
+    padding: 20px;
+    transition: transform 0.3s;
+    text-align: center;
+    border: 1px solid transparent;
+    color: white;
+}
+.main_button:hover {
+    transform: scale(1.2);
+}
+.title {
+    text-align: center;
+    font-family: 'BMKkubulim', Arial, sans-serif;
+    font-size: 7em;
+    color: white;
+}
+.small_title {
+    font-size: 0.2em;
+    color: #9dcd17;
+}
+footer {
+    position: absolute;
+    width: 95%;
+    bottom: 0;
+    color: white;
+    font-size: 0.8em;
+    text-align: right;
+}
+@media (max-width: 768px) {
+    .title {
+        font-size: 4em;
+    }
+    .main_buttons {
+        font-size: 1.2em;
+    }
+    .container {
+        width: 90%;
+    }
+}

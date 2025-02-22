@@ -22,6 +22,25 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <style>
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 120px;
+            background: linear-gradient(rgba(255, 255, 255, 0), white);
+            animation: shooting-star 0.5s ease-in-out infinite;
+        }
+        @keyframes shooting-star {
+            0% {
+                transform: translateX(0) translateY(0) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-300px) translateY(300px) rotate(45deg);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -41,5 +60,19 @@
             <p>ⓒ 2025 숭덕고등학교 청송학당</p>
         </div>
     </footer>
+    <script>
+        function createShootingStar() {
+            const star = document.createElement('div');
+            star.className = 'shooting-star';
+            star.style.top = `${Math.random() * window.innerHeight}px`;
+            star.style.left = `${Math.random() * window.innerWidth}px`;
+            document.body.appendChild(star);
+            setTimeout(() => {
+                star.remove();
+            }, 500);
+        }
+
+        setInterval(createShootingStar, 3000);
+    </script>
 </body>
 </html>

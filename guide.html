@@ -4,8 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>청송학당 이용 안내</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .guide-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            text-align: center;
+        }
+        .guide-buttons {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: -30px;
+            width: 100%;
+        }
+        .guide-buttons button {
+            background: #9dcd17;
+            border: none;
+            padding: 10px 40px;
+            border-radius: 20px 20px 0 0;
+            cursor: pointer;
+            font-family: 'GmarketSansTTFBold', Arial, sans-serif;
+            color: white;
+            transition: background 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 5px;
+        }
+        .guide-buttons button:hover {
+            background: #86b014;
+        }
+        .guide-content {
+            margin-top: 40px;
+            font-family: 'GmarketSansTTFLight', Arial, sans-serif;
+            padding: 20px;
+            border-top: 2px solid #9dcd17;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="guide-container">
+        <div class="guide-buttons">
+            <button onclick="showContent('location')">위치 안내</button>
+            <button onclick="showContent('facilities')">시설 안내</button>
+            <button onclick="showContent('seating')">자리 안내</button>
+            <button onclick="showContent('schedule')">시간표 안내</button>
+        </div>
+        <div id="guide-content" class="guide-content">
+            <!-- 초기 내용 -->
+        </div>
+    </div>
+    <script>
+        const content = {
+            location: '<h2>위치 안내</h2><p>청송학당은 숭덕고등학교 본관 3층에 위치해 있습니다. 정문을 통해 들어오셔서 엘리베이터를 이용해 3층으로 올라오시면 됩니다.</p><img src="school_map.png" alt="학교 지도" style="width: 100%; height: auto; margin-top: 20px;">',
+            facilities: '<h2>시설 안내</h2><p>청송학당은 최신식 학습 시설을 갖추고 있습니다. 각 자리에는 개인용 콘센트와 조명이 설치되어 있으며, 무료 Wi-Fi가 제공됩니다.</p>',
+            seating: '<h2>자리 안내</h2><p>청송학당은 자유석제로 운영됩니다. 자리에 앉으신 후, 자리표를 작성하여 자리에 두시면 됩니다. 자리를 이동하실 경우, 관리자에게 알려주세요.</p>',
+            schedule: '<h2>시간표 안내</h2><p>청송학당은 월요일부터 금요일까지 오전 8시부터 오후 10시까지 운영됩니다. 주말 및 공휴일은 운영하지 않습니다.</p>'
+        };
+
+        function showContent(type) {
+            document.getElementById('guide-content').innerHTML = content[type];
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showContent('location');
+        });
+    </script>
 </body>
 </html>

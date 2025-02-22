@@ -30,12 +30,32 @@ body {
     background-color: black;
     background-color: rgba(0,0,0,0.6);
     background-blend-mode: darken;
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 70%;
+    animation: slideIn 0.5s ease-in-out;
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 .main_buttons {
     display: grid;
@@ -49,6 +69,15 @@ body {
     text-align: center;
     border: 1px solid transparent;
     color: white;
+    animation: buttonFadeIn 1s ease-in-out;
+}
+@keyframes buttonFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 .main_button:hover {
     transform: scale(1.2);
@@ -58,10 +87,28 @@ body {
     font-family: 'BMKkubulim', Arial, sans-serif;
     font-size: 7em;
     color: white;
+    animation: wiggle 3s infinite, titleFadeIn 1s ease-in-out;
+}
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+}
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 .small_title {
     font-size: 0.2em;
     color: #9dcd17;
+    animation: fadeIn 1s ease-in-out;
 }
 footer {
     position: absolute;
@@ -70,6 +117,7 @@ footer {
     color: white;
     font-size: 0.8em;
     text-align: right;
+    animation: fadeIn 1s ease-in-out;
 }
 @media (max-width: 768px) {
     .title {
